@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const Favourite = () => {
+const Favourite = ({navigation}) => {
     return(
         <View style={{
             justifyContent:"center",

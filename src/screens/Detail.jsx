@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import { Component } from 'react-native';
 
-const Detail = () => {
+const Detail = ({navigation}) => {
     return(
         <View style={{
             justifyContent:"center",

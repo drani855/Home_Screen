@@ -1,15 +1,14 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/Home';
-import Detail from '../screens/Detail';
-import Favourite from '../screens/Favourite';
-import Profile from '../screens/Profile';
-import {Image} from 'react-native';
-//import SwiperComponent from '../components/SwiperComponents';
+import React from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createStackNavigator } from '@react-navigation/stack'
+import Home from '../screens/Home'
+import Detail from '../screens/Detail'
+import Favourite from '../screens/Favourite'
+import Profile from '../screens/Profile'
+import {Image} from 'react-native'
 
-const Tab=createBottomTabNavigator();
-const BottomTabNavigator=()=>{
+const Tab = createBottomTabNavigator();
+const BottomTabNavigator = () => {
     return(
         <Tab.Navigator
             tabBarOptions={{
@@ -20,24 +19,22 @@ const BottomTabNavigator=()=>{
                     backgroundColor:"#eff4f0",
                     elevation:2
                 }
-
-            }}>
-                 <Tab.Screen
-                name="Spee"
+            }}
+        >
+            <Tab.Screen
+                name="Home"
                 component={Home}
                 options={{
-                    
                     tabBarLabel:"",
                     tabBarIcon:({color, size}) => (
                         <Image
-                            source={require('../images/search.png')}
-                            style={{ height:20, width:20}}
+                            source={require("../images/home.png")}
+                            style={{ height:20, width:20 }}
                         />
-                        
                     )
                 }}
             />
-            
+
             <Tab.Screen
                 name="Favourite"
                 component={Favourite}
@@ -45,7 +42,7 @@ const BottomTabNavigator=()=>{
                     tabBarLabel:"",
                     tabBarIcon:({color, size}) => (
                         <Image
-                            source={require('../images/heart.png')}
+                            source={require("../images/search.png")}
                             style={{ height:20, width:20 }}
                         />
                     )
@@ -58,28 +55,29 @@ const BottomTabNavigator=()=>{
                     tabBarLabel:"",
                     tabBarIcon:({color, size}) => (
                         <Image
-                            source={require('../images/account.png')}
-                            style={{ height:20, width:20}}
+                            source={require("../images/heart.png")}
+                            style={{ height:20, width:20 }}
                         />
                     )
                 }}
             />
-
-            </Tab.Navigator>
+        </Tab.Navigator>
     );
 };
+
+
 const Stack = createStackNavigator();
 const screenOptionStyle = {
     headerShown: false
 }
+
 const HomeStackNavigator = () => {
     return(
-    <Stack.Navigator screenOptions={screenOptionStyle}>
-        <Stack.Screen name="Home" component={BottomTabNavigator}
-        />
-        <Stack.Screen name="Detail" component={Detail}/>
+        <Stack.Navigator screenOptions={screenOptionStyle}>
+            <Stack.Screen name="Speedbae" component={BottomTabNavigator}/>
+            <Stack.Screen name="Detail" component={Detail}/>
         </Stack.Navigator>
-        )
-    }
-    export default HomeStackNavigator;
+    )
+}
 
+export default HomeStackNavigator;;
